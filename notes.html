@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take Notes</title>
+    <script src="../ckeditor/ckeditor.js"></script>
+</head>
+<body>
+    <h1>You can take notes over here..</h1>
+    <textarea id="userNotes" rows="100" cols="200"  style="display: block;"></textarea>
+    <button id="saveNotesBtn">Save</button>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            CKEDITOR.replace('userNotes');
+        });
+    </script>
+    <script src="../notes-response.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YouTube Transcriber</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="text">
+        <div class="header">
+            <h1>Are you struggling with <span class="word">LENGTHY</span> YouTube videos, finding them <span class="word">TIME-CONSUMING</span> to navigate????</h1>
+        </div>
+        <div class="main-content">
+            <h2><span class="why">Why</span> use this tool?</h2>
+            <ul>
+                <li>Easily summarize and customize lengthy transcripts</li>
+                <li>Listen to your summaries</li>
+                <li>Customize your summaries based on the accuracy</li>
+                <li>Downloading transcript and summary is free!!</li>
+                <li>Translate the summary into a language of your choice</li>
+                <li>Analyze and Visualize Keywords</li>
+                <li>Other features like note making and highlighting available</li>
+            </ul>
+        </div>
+        <div class="footer">
+            <h2>Simplify your workflow and <span class="word">SAVE</span> valuable time with YouTubeTranscript Customizer today!</h2>
+        </div>
+    </div>
+    <div class="background-image">
+        <img src="background-image.jpg">
+    </div>
+    <div class="content">
+        <div class="container">
+            <h1>Enter the Video ID here..</h1>
+            <form action="/process" method="post" id="transcriptForm">
+                <div>
+                    <input type="text" id="videoIdInput" name="videoId" required>
+                </div>
+                <button type="submit">Transcribe and Summarize</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('transcriptForm');
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const videoId = document.getElementById('videoIdInput').value;
+                console.log('Video ID:', videoId);
+
+                form.action = `/process?videoId=${encodeURIComponent(videoId)}`;
+                form.submit();
+            });
+        });
+    </script>
+</body>
+</html>

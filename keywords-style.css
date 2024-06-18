@@ -1,0 +1,129 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #309ca3;
+}
+
+#keywordsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.keyword-box {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: calc(18% - 20px);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#tooltip {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    max-width: 300px;
+    z-index: 1000;
+    display: none;
+}
+
+.keyword-box:hover {
+    background-color: #e0e0e0;
+}
+
+
+.keyword-box:hover {
+    background-color: #e0e0e0;
+}
+
+#mediaContainer {
+    display: flex;
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+#imagesContainer, #recommendationsContainer {
+    flex: 0 0 auto;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 10px;
+}
+
+#recommendationsContainer {
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+#imagesContainer {
+    border-right: 1px solid #ccc;
+}
+
+#recommendationsContainer img {
+    margin-right: 10px;
+    cursor: pointer;
+    max-width: 300px;
+    height: auto;
+}
+
+#imagesContainer img {
+    margin-right: 10px; 
+    cursor: pointer;
+    width: 500px;
+    height: auto;
+    transition: width 0.3s ease;
+}
+
+#imagesContainer img:hover {
+    width: 600px;
+}
+
+.image-expand-icon::after {
+    content: "+";
+    font-size: 20px;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    border-radius: 50%;
+    display: none;
+}
+
+.image-container:hover .image-expand-icon {
+    display: block;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#buttonsContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+button {
+    border: none;
+    background-color: #25272a;
+    color: #f3e8e8;
+    cursor: pointer;
+    text-align: left;
+    font-size: large;
+    margin-left: 10px;
+}

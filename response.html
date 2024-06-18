@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customizer</title>
+    <script src="../response-events.js"></script>
+    <script src="../ckeditor/ckeditor.js"></script>
+    <link rel="stylesheet" href="response-style.css">
+</head> 
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <div class="button-container">
+                <button id="updateSummaryBtn">Update Summary</button>
+                <button id="calculateAccuracyBtn">Calculate Accuracy</button>
+                <div id="Accuracy"></div>
+                <button id="notes">Take Notes</button>
+                <button id="highlightText">Highlight Your Text</button>
+                <button id="removeHighlightText">Remove Highlight</button>
+                <button id="keywords">Keywords</button>
+                <button id="download">Export</button>
+                <button id="playAudioBtn">Listen to your Summary</button>
+            </div>
+            <audio id="audioPlayer" controls>
+                <source src="/summary_audio.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+
+        <div class="middle-content">
+            <div class="transcriptBox">
+                <h2>Your Transcript is here..</h2>
+                <div id="editableTranscript">{{transcript}}</div>
+            </div>
+
+            <div class="summaryBox">
+                <h2>Your Summary is here..</h2>                
+                <input type="text" id="searchInput" placeholder="Enter word to search">
+                <button id="search">Search</button>
+                <div id="editableSummary" contenteditable="true">{{summary}}</div>
+            </div>
+        </div>
+        
+        <div class="right-panel">
+            <select id="language">
+                <option value="">Choose Language</option>
+                <option value="telugu">Telugu</option>
+                <option value="hindi">Hindi</option>
+            </select>
+            <button id="translate">Translate</button>
+            <div id="translationContainer" contenteditable="true"></div>
+        </div>
+    </div>
+    <script>
+        const url = window.location.href;
+        const state = { title: document.title, url: url };
+        window.history.replaceState(state, document.title, url);
+    </script>
+</body>
+</html>
